@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerMovement : MonoBehaviour{
 
@@ -21,7 +22,7 @@ public class PlayerMovement : MonoBehaviour{
 	
 	// Update is called once per frame
 	void Update () {
-		moveInput = new Vector3 (Vertical,0f, Horizontal);
+		/*moveInput = new Vector3 (Vertical,0f, Horizontal);
 		moveVelocity = moveInput * moveSpeed;
 		print(Vertical);
 	
@@ -41,13 +42,16 @@ public class PlayerMovement : MonoBehaviour{
 	} else{
 		Horizontal = 0;
 	}
+*/
+	moveInput = new Vector3(CrossPlatformInputManager.GetAxis("Horizontal"),0.0f,CrossPlatformInputManager.GetAxis("Vertical"));
+	moveVelocity = moveInput * moveSpeed;
 
 	}
 
 	void FixedUpdate(){
 		myRigidbody.velocity = moveVelocity;
-		
-		
+		if(moveVelocity != Vector3.zero)
+		this.transform.rotation = Quaternion.LookRotation(moveVelocity);
 	}
 
 
