@@ -43,7 +43,8 @@ namespace UnityStandardAssets.CrossPlatformInput
 					break;
 			}
 		}
-
+		
+		
 		public static bool AxisExists(string name)
 		{
 			return activeInput.AxisExists(name);
@@ -262,7 +263,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 				matchWithInputManager = matchToInputSettings;
 			}
 
-
+			
 			// A controller gameobject should call this function when the button is pressed down
 			public void Pressed()
 			{

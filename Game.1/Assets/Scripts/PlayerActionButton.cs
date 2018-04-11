@@ -13,6 +13,6 @@ public class PlayerActionButton : MonoBehaviour
 	
 	void Update () 
 	{
-		print(CrossPlatformInputManager.GetButton("Action"));
+		//print(CrossPlatformInputManager.GetButton("Action"));
 	}
 }
