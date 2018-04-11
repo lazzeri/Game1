@@ -12,20 +12,30 @@ public class PlayerMovement : MonoBehaviour{
 
 	private int Vertical;
 	private int Horizontal;
-	private Vector3 currVel;
+	private Vector3 currVel,curPos,position,lastPos;
 	// Use this for initialization
 	void Start () {
 		Vertical = 0;
 		Horizontal = 0;
 		anim = GetComponent<Animator>();
 		myRigidbody = GetComponent<Rigidbody> ();
-		StartCoroutine( CalcVelocity() );
+		//StartCoroutine( CalcVelocity() );
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
 	
+	 curPos = this.transform.position;
+     if(curPos == lastPos) 
+	 {
+        anim.SetBool("Moving",false);
+     }else
+	 {
+		 print("LOL");
+	    anim.SetBool("Moving",true);
+	 }
+     lastPos = curPos;
 
 
 	/*moveInput = new Vector3 (Vertical,0f, Horizontal);

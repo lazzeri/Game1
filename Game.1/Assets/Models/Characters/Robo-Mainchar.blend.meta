@@ -1,20 +1,51 @@
 fileFormatVersion: 2
-guid: 2212f1c8787bce0488036c006fe4c5aa
+guid: 47ad26fa1a867fe45addcdc32a0b67cc
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: Material
-    2100002: Material_004
-    2100004: Material_003
-    2100006: Material_002
-    2100008: Material_001
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cube
+    100000: Cube
+    100002: Cube_001
+    100004: Cube_002
+    100006: Cube_003
+    100008: Cylinder
+    100010: Cylinder_001
+    100012: Icosphere
+    100014: //RootNode
+    400000: Cube
+    400002: Cube_001
+    400004: Cube_002
+    400006: Cube_003
+    400008: Cylinder
+    400010: Cylinder_001
+    400012: Icosphere
+    400014: //RootNode
+    2100000: MC_Body
+    2100002: MC_Black
+    2100004: MC_Red
+    2300000: Cube
+    2300002: Cube_001
+    2300004: Cube_002
+    2300006: Cube_003
+    2300008: Cylinder
+    2300010: Cylinder_001
+    2300012: Icosphere
+    3300000: Cube
+    3300002: Cube_001
+    3300004: Cube_002
+    3300006: Cube_003
+    3300008: Cylinder
+    3300010: Cylinder_001
+    3300012: Icosphere
+    4300000: Cube_003
+    4300002: Cube_002
+    4300004: Cylinder_001
+    4300006: Cube_001
+    4300008: Icosphere
+    4300010: Cylinder
+    4300012: Cube
     7400000: Default Take
     9500000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
