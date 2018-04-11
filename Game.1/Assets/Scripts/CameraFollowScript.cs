@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraFollowScript : MonoBehaviour {
 
+	public float entfernung = 5.0f;
+	public float entfernung2 = 5.0f;
 	public GameObject GameChar;
 	void Start () {
 		
@@ -11,6 +13,6 @@ public class CameraFollowScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		this.transform.position = new Vector3(transform.position.x,GameChar.transform.position.y + 10.0f, GameChar.transform.position.z -6.0f);
+		this.transform.position = new Vector3(transform.position.x,GameChar.transform.position.y + entfernung, GameChar.transform.position.z + entfernung2);
 	}
 }
