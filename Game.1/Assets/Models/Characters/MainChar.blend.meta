@@ -46,7 +46,22 @@ ModelImporter:
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MC_Black
+    second: {fileID: 2100000, guid: 44007ff97f6ed214ab6c58d0b31de79f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MC_Body
+    second: {fileID: 2100000, guid: 107fd79977f4bb24eaa508074adf5bd3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MC_Red
+    second: {fileID: 2100000, guid: 6811508143ae60943bea0466d5255274, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

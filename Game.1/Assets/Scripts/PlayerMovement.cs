@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour{
 	private int Vertical;
 	private int Horizontal;
 	private Vector3 currVel,curPos,position,lastPos;
+
 	// Use this for initialization
 	void Start () {
 		Vertical = 0;
@@ -73,6 +74,7 @@ public class PlayerMovement : MonoBehaviour{
 		this.transform.rotation = Quaternion.LookRotation(moveVelocity);
 	}
 
+	//Not Needed!
 	IEnumerator CalcVelocity()
 {
   while( Application.isPlaying )
