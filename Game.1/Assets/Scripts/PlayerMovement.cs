@@ -27,17 +27,53 @@ public class PlayerMovement : MonoBehaviour{
 	void Update () 
 	{
 	
-	 curPos = this.transform.position;
-     if(curPos == lastPos) 
-	 {
-        anim.SetBool("Moving",false);
-     }else
-	 {
+		if(this.gameObject.layer == 8)
+		{
+			foreach(Transform t in transform)
+			{
+				t.gameObject.layer = 8;
+			}
+		}
+		if(this.gameObject.layer == 0)
+		{
+			foreach(Transform t in transform)
+			{
+				t.gameObject.layer = 0;
+			}
+		}
+
+	 	curPos = this.transform.position;
+    	 if(curPos == lastPos) 
+	 	{
+        	anim.SetBool("Moving",false);
+     	}else
+		{
 		 print("LOL");
 	    anim.SetBool("Moving",true);
 	 }
      lastPos = curPos;
 
+
+
+	
+	moveInput = new Vector3(CrossPlatformInputManager.GetAxis("Horizontal"),0.0f,CrossPlatformInputManager.GetAxis("Vertical"));
+	moveVelocity = moveInput * moveSpeed;
+	float lockPos = 0f;
+	
+	}
+	
+	void FixedUpdate()
+	{
+		if(this.gameObject.layer != 8)
+		{
+		myRigidbody.velocity = moveVelocity;
+		if(moveVelocity != Vector3.zero)
+		this.transform.rotation = Quaternion.LookRotation(moveVelocity);
+		}
+	}
+
+	
+}
 
 	/*moveInput = new Vector3 (Vertical,0f, Horizontal);
 		moveVelocity = moveInput * moveSpeed;
@@ -60,41 +96,4 @@ public class PlayerMovement : MonoBehaviour{
 		Horizontal = 0;
 	}
 */
-	
-	moveInput = new Vector3(CrossPlatformInputManager.GetAxis("Horizontal"),0.0f,CrossPlatformInputManager.GetAxis("Vertical"));
-	moveVelocity = moveInput * moveSpeed;
-	float lockPos = 0f;
-	
-	}
-	
-	void FixedUpdate()
-	{
-		myRigidbody.velocity = moveVelocity;
-		if(moveVelocity != Vector3.zero)
-		this.transform.rotation = Quaternion.LookRotation(moveVelocity);
-	}
 
-	//Not Needed!
-	IEnumerator CalcVelocity()
-{
-  while( Application.isPlaying )
-  {
-    // Position at frame start
-   Vector3 prevPos = transform.position;
-    // Wait till it the end of the frame
-    yield return new WaitForEndOfFrame();
-    // Calculate velocity: Velocity = DeltaPosition / DeltaTime
-    currVel = (prevPos - transform.position) / Time.deltaTime;
-    Debug.Log( currVel );
-	if(currVel == Vector3.zero)
-	{
-		anim.SetBool("Moving",false);
-	}else
-	{
-		anim.SetBool("Moving",true);
-	}
-  }
-}
-
-
-}

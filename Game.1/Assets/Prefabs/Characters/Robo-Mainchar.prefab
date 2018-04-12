@@ -132,9 +132,10 @@ GameObject:
   - component: {fileID: 54717221908119654}
   - component: {fileID: 114212027170792864}
   - component: {fileID: 114471607188751106}
+  - component: {fileID: 65182382041341902}
   m_Layer: 0
   m_Name: Robo-Mainchar
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,7 +165,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1953352535528650}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0.64774764, y: 0.23469533, z: -0.43705383}
+  m_LocalPosition: {x: 0.64774764, y: 0.86, z: -0.43705383}
   m_LocalScale: {x: 0.4301975, y: 0.12735532, z: 0.6189837}
   m_Children: []
   m_Father: {fileID: 4279275987957568}
@@ -190,7 +191,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1393062580920168}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.2800003, y: 3.2332532, z: 0.96}
+  m_LocalPosition: {x: -0.2800003, y: 3.019, z: 0.96}
   m_LocalScale: {x: 0.42222047, y: 0.42222044, z: 0.42222047}
   m_Children: []
   m_Father: {fileID: 4279275987957568}
@@ -203,8 +204,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1739331657087198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2923, y: 2.07, z: -2.2412}
-  m_LocalScale: {x: 0.20986432, y: 0.20986432, z: 0.20986432}
+  m_LocalPosition: {x: 0.297, y: 6.531, z: -5.938}
+  m_LocalScale: {x: 0.062905274, y: 0.062905274, z: 0.062905274}
   m_Children:
   - {fileID: 4574679546457430}
   - {fileID: 4201027621893284}
@@ -223,7 +224,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1703729909387294}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -1.330102, y: 0.23469533, z: -0.14023076}
+  m_LocalPosition: {x: -1.330102, y: 0.6061065, z: -0.14023076}
   m_LocalScale: {x: 0.4301975, y: 0.12735532, z: 0.6189837}
   m_Children: []
   m_Father: {fileID: 4279275987957568}
@@ -236,7 +237,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1653672790863550}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2899999, y: 3.2394822, z: 1.6409019}
+  m_LocalPosition: {x: -0.2899999, y: 3.01, z: 1.6409019}
   m_LocalScale: {x: 0.6199549, y: 0.6199549, z: 0.6199549}
   m_Children: []
   m_Father: {fileID: 4279275987957568}
@@ -249,7 +250,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1226463079166660}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.3411851, y: 3.174111, z: -0.28864115}
+  m_LocalPosition: {x: -0.3411851, y: 2.8859334, z: -0.28864115}
   m_LocalScale: {x: 1, y: 1.4999998, z: 1}
   m_Children: []
   m_Father: {fileID: 4279275987957568}
@@ -262,7 +263,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1495335625361914}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.3411851, y: 1.4880904, z: -0.28864115}
+  m_LocalPosition: {x: -0.3411851, y: 1.5125123, z: -0.28864115}
   m_LocalScale: {x: 0.73145866, y: 1.0971879, z: 0.73145866}
   m_Children: []
   m_Father: {fileID: 4279275987957568}
@@ -589,6 +590,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1.9999999, z: 2}
   m_Center: {x: -0.0000019073486, y: -0.0000009536743, z: -0.0000009536743}
+--- !u!65 &65182382041341902
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1739331657087198}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65396709053639406
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -665,7 +678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7dbdc8084f5524fb79a39cb03eb3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 1
 --- !u!122 &122077639096583418
 Halo:
   m_ObjectHideFlags: 1
