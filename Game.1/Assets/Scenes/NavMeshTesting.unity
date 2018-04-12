@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: Infinity, g: Infinity, b: Infinity, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -113,6 +113,59 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &215224618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 215224621}
+  - component: {fileID: 215224620}
+  - component: {fileID: 215224619}
+  m_Layer: 0
+  m_Name: Holes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &215224619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 215224618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0252ff2f3139c4185a17ecea636d2d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &215224620
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 215224618}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &215224621
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 215224618}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.277, y: 6.441414, z: -4.8}
+  m_LocalScale: {x: 0.48831534, y: 0.48831534, z: 0.48831534}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &412085092
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +327,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4279275987957568, guid: 48e9bdc69c136d24a99ddbbf1e21ce76, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.099
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: 4279275987957568, guid: 48e9bdc69c136d24a99ddbbf1e21ce76, type: 2}
       propertyPath: m_LocalPosition.y
@@ -282,7 +335,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4279275987957568, guid: 48e9bdc69c136d24a99ddbbf1e21ce76, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -4.696
+      value: -5.99
       objectReference: {fileID: 0}
     - target: {fileID: 4279275987957568, guid: 48e9bdc69c136d24a99ddbbf1e21ce76, type: 2}
       propertyPath: m_LocalRotation.x
@@ -316,9 +369,30 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.062905274
       objectReference: {fileID: 0}
+    - target: {fileID: 1739331657087198, guid: 48e9bdc69c136d24a99ddbbf1e21ce76, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48e9bdc69c136d24a99ddbbf1e21ce76, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &514314392 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1739331657087198, guid: 48e9bdc69c136d24a99ddbbf1e21ce76,
+    type: 2}
+  m_PrefabInternal: {fileID: 514314391}
+--- !u!65 &514314393
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 514314392}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1523046043
 Prefab:
   m_ObjectHideFlags: 0
@@ -357,6 +431,21 @@ Prefab:
     - target: {fileID: 4886702731247302, guid: 7347ab37827889e41a033782eef8e4e7, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114196009135349404, guid: 7347ab37827889e41a033782eef8e4e7,
+        type: 2}
+      propertyPath: GameChar
+      value: 
+      objectReference: {fileID: 514314392}
+    - target: {fileID: 114196009135349404, guid: 7347ab37827889e41a033782eef8e4e7,
+        type: 2}
+      propertyPath: entfernung
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114196009135349404, guid: 7347ab37827889e41a033782eef8e4e7,
+        type: 2}
+      propertyPath: entfernung2
+      value: -0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7347ab37827889e41a033782eef8e4e7, type: 2}
