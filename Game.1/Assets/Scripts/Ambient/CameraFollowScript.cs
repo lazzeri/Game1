@@ -6,9 +6,9 @@ public class CameraFollowScript : MonoBehaviour {
 
 	public float entfernung = 5.0f;
 	public float entfernung2 = 5.0f;
-	public GameObject GameChar;
+	 GameObject GameChar;
 	void Start () {
-		
+		GameChar = GameObject.Find("Robo-Mainchar");
 	}
 	
 	// Update is called once per frame

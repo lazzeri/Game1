@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 114212027170792864}
   - component: {fileID: 114471607188751106}
   - component: {fileID: 65182382041341902}
+  - component: {fileID: 114840521963217276}
   m_Layer: 0
   m_Name: Robo-Mainchar
   m_TagString: Player
@@ -679,6 +680,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+--- !u!114 &114840521963217276
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1739331657087198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b3f5575f81420d41920744db0b6b33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!122 &122077639096583418
 Halo:
   m_ObjectHideFlags: 1
@@ -689,7 +701,7 @@ Halo:
   m_Color:
     serializedVersion: 2
     rgba: 4278196991
-  m_Size: 0.2
+  m_Size: 0.1
 --- !u!136 &136037005567224476
 CapsuleCollider:
   m_ObjectHideFlags: 1

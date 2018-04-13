@@ -105,6 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87795c0d89f0d3e4ebf2b6bf502d5bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entfernung: 3
+  entfernung2: -1.75
   GameChar: {fileID: 0}
 --- !u!124 &124260815327906766
 Behaviour:

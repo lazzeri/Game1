@@ -296,16 +296,6 @@ Prefab:
       propertyPath: GameChar
       value: 
       objectReference: {fileID: 1735760747}
-    - target: {fileID: 114196009135349404, guid: 7347ab37827889e41a033782eef8e4e7,
-        type: 2}
-      propertyPath: entfernung
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114196009135349404, guid: 7347ab37827889e41a033782eef8e4e7,
-        type: 2}
-      propertyPath: entfernung2
-      value: -1.75
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7347ab37827889e41a033782eef8e4e7, type: 2}
   m_IsPrefabParent: 0
@@ -1332,17 +1322,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1739331657087198, guid: 48e9bdc69c136d24a99ddbbf1e21ce76,
     type: 2}
   m_PrefabInternal: {fileID: 1762296406}
---- !u!114 &1735760754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1735760747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b3f5575f81420d41920744db0b6b33c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1752968038 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1152580024644254, guid: 5b42e9efc8e93cb4d8464118ad4c2eb3,
@@ -1398,11 +1377,6 @@ Prefab:
     - target: {fileID: 4279275987957568, guid: 48e9bdc69c136d24a99ddbbf1e21ce76, type: 2}
       propertyPath: m_RootOrder
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 122077639096583418, guid: 48e9bdc69c136d24a99ddbbf1e21ce76,
-        type: 2}
-      propertyPath: m_Size
-      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 48e9bdc69c136d24a99ddbbf1e21ce76, type: 2}
