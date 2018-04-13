@@ -48,8 +48,7 @@ public class PlayerMovement : MonoBehaviour{
         	anim.SetBool("Moving",false);
      	}else
 		{
-		 print("LOL");
-	    anim.SetBool("Moving",true);
+		  anim.SetBool("Moving",true);
 	 }
      lastPos = curPos;
 
