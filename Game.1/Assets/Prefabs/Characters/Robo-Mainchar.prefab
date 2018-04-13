@@ -130,10 +130,11 @@ GameObject:
   - component: {fileID: 4279275987957568}
   - component: {fileID: 95667737927791294}
   - component: {fileID: 54717221908119654}
+  - component: {fileID: 65182382041341902}
   - component: {fileID: 114212027170792864}
   - component: {fileID: 114471607188751106}
-  - component: {fileID: 65182382041341902}
   - component: {fileID: 114840521963217276}
+  - component: {fileID: 114073615801794168}
   m_Layer: 0
   m_Name: Robo-Mainchar
   m_TagString: Player
@@ -657,6 +658,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114073615801794168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1739331657087198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b3f5575f81420d41920744db0b6b33c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114212027170792864
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStatus : MonoBehaviour {
+public class PlayerDamage : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
