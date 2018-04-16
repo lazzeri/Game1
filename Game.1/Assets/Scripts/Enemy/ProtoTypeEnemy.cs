@@ -9,18 +9,25 @@ public class ProtoTypeEnemy : MonoBehaviour
 	private GameObject Target;
 	private Vector3 ToLookAt;
 	public float speed = 0f;
-	private bool inZone;
-	private Animator animator;
+
 	bool rushing,stopwalking;
+	public float duration = 1;
+	float smoothness = 0.02f;
 
 	public Vector3 RaycastHeight;
+
+	public GameObject Eye,Legs1,Legs2;
 	void Start () 
 	{
+		Eye = this.gameObject.transform.Find("Sphere_001").gameObject;
+		Legs1 = this.gameObject.transform.Find("Cylinder_004").gameObject;
+		Legs2 = this.gameObject.transform.Find("Cylinder_005").gameObject;
+		Target = GameObject.Find("Robo-Mainchar");
+
 		stopwalking = false;
 		rushing = false;
 		speed = 0f;
-		animator = GetComponent<Animator>();
-		Target = GameObject.Find("Robo-Mainchar");
+		
 		ToLookAt = new Vector3(Target.transform.position.x,this.transform.position.y,Target.transform.position.z);
 		this.transform.LookAt(ToLookAt);
 	}
@@ -38,7 +45,7 @@ public class ProtoTypeEnemy : MonoBehaviour
 		 
 
 		//Raycast
-		RaycastHeight = new Vector3(transform.position.x,transform.position.y - 0.15f, transform.position.z);
+		RaycastHeight = new Vector3(transform.position.x,transform.position.y + 0.15f, transform.position.z);
 		RaycastHit hit;
 		
 		Vector3 forward = transform.TransformDirection(Vector3.forward) * 2;
@@ -57,6 +64,7 @@ public class ProtoTypeEnemy : MonoBehaviour
 
 		if(rushing)
 		{
+			GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 		transform.position += transform.forward * Time.deltaTime * movementSpeed;
 		}
 		
@@ -74,16 +82,26 @@ public class ProtoTypeEnemy : MonoBehaviour
 
 	private IEnumerator Rush()
     {
-		print("go");
-		//animator.Play("Rush");
+		float progress = 0;
+		float increment = smoothness / duration;
+ 		
+		Eye.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.red);
+		Legs1.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.red);
+		Legs2.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.red);
+
+	
 		stopwalking = true;
-		GetComponent<UnityEngine.AI.NavMeshAgent>().isStopped = true;
+		GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 		yield return new WaitForSeconds(whaiting);
 		rushing = true;
 		yield return new WaitForSeconds(1);
 		rushing =false;
 		stopwalking = false;
-		GetComponent<UnityEngine.AI.NavMeshAgent>().isStopped = false;
+		GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+		
+		Eye.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.green);
+		Legs1.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.green);
+		Legs2.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.green);
 
 		
 
