@@ -13,8 +13,8 @@ public class ProtoTypeEnemy : MonoBehaviour
 	bool rushing,stopwalking;
 	public float duration = 1;
 	float smoothness = 0.02f;
-
-	public Vector3 RaycastHeight;
+    public Vector3 RaycastHeight;
+    public bool bStuck;
 
 	public GameObject Eye,Legs1,Legs2;
 	void Start () 
@@ -53,9 +53,6 @@ public class ProtoTypeEnemy : MonoBehaviour
 
 		if(Physics.Raycast(transform.position,(forward), out hit))
 		{
-			print("Boom");
-
-			
 			if(hit.collider.gameObject.tag == "Player" && !stopwalking && hit.distance <= 2.0f)
 			{
 			StartCoroutine(Rush());
@@ -72,7 +69,9 @@ public class ProtoTypeEnemy : MonoBehaviour
 
 	}
 
-	void FixedUpdate()
+   
+
+    void FixedUpdate()
 	{
 		//For Looking
 	Vector3 direction = Target.transform.position - transform.position;
