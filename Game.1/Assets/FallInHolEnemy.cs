@@ -8,7 +8,7 @@ public class FallInHolEnemy : MonoBehaviour
     public ProtoTypeEnemy scProto;
     bool bDrag1, bDrag2;
     public float moveSpeed = 10.0f;
-    public 
+    
     // Use this for initialization
     void Start()
     {
@@ -36,7 +36,7 @@ public class FallInHolEnemy : MonoBehaviour
     void Update()
     {
       
-        if (bDrag1)
+        if (bDrag1 || bDrag2)
         {
 
             if (transform.position != position1.position && bDrag1 == true)
@@ -55,6 +55,16 @@ public class FallInHolEnemy : MonoBehaviour
             {
                 print("xd");
                 transform.position = Vector3.MoveTowards(transform.position, position2.position, moveSpeed * Time.deltaTime);
+            }
+            if(transform.position == position2.position)
+            {
+                Destroy(this.gameObject.GetComponent<Rigidbody>());
+                Destroy(this.gameObject.GetComponent<CapsuleCollider>());
+                EnemyDeathCounter.counter = EnemyDeathCounter.counter + 1;
+                print(EnemyDeathCounter.counter);
+
+                bDrag2 = false;
+
             }
 
 
