@@ -8,6 +8,7 @@ public class FallInHolEnemy : MonoBehaviour
     public ProtoTypeEnemy scProto;
     bool bDrag1, bDrag2;
     public float moveSpeed = 10.0f;
+    public 
     // Use this for initialization
     void Start()
     {
@@ -20,12 +21,13 @@ public class FallInHolEnemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Hole")
         {
-
+          
+            print("trying");
             scProto.enabled = false;
             position1 = other.gameObject.transform.GetChild(0).transform;
             position2 = other.gameObject.transform.GetChild(0).transform.GetChild(0).transform;
             other.gameObject.SetActive(false);
-           // gameObject.layer = 8;
+            GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
             bDrag1 = true;
 
         }
@@ -33,17 +35,19 @@ public class FallInHolEnemy : MonoBehaviour
 
     void Update()
     {
+      
         if (bDrag1)
         {
 
             if (transform.position != position1.position && bDrag1 == true)
             {
-
+                print("Trying");
                 transform.position = Vector3.MoveTowards(transform.position, position1.position, moveSpeed * Time.deltaTime);
                
             }
             if (transform.position == position1.position)
             {
+                print("True");
                 bDrag1 = false;
                 bDrag2 = true;
             }

@@ -23,7 +23,7 @@ public class ProtoTypeEnemy : MonoBehaviour
 		Legs1 = this.gameObject.transform.Find("Cylinder_004").gameObject;
 		Legs2 = this.gameObject.transform.Find("Cylinder_005").gameObject;
 		Target = GameObject.Find("Robo-Mainchar");
-
+		bStuck = false;
 		stopwalking = false;
 		rushing = false;
 		speed = 0f;
@@ -69,7 +69,16 @@ public class ProtoTypeEnemy : MonoBehaviour
 
 	}
 
-   
+     void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Hole")
+        {
+          
+           bStuck = true;
+
+        }
+    }
+
 
     void FixedUpdate()
 	{
@@ -96,6 +105,7 @@ public class ProtoTypeEnemy : MonoBehaviour
 		yield return new WaitForSeconds(1);
 		rushing =false;
 		stopwalking = false;
+		if(!bStuck)
 		GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
 		
 		Eye.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.green);
