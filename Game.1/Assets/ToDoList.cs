@@ -8,9 +8,11 @@ public class ToDoList : MonoBehaviour {
 	
 	Lucas ToDoList:
 	Start into game check!
-	Enemy Damage
+    Light at door for showing path
+    Enemy Damage
 	PlayerDeath
     End the level
+    Dying Try again UI
 	
 	
 	

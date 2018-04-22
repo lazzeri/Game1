@@ -32,12 +32,7 @@ public class PlayerMovement : MonoBehaviour{
 	// Update is called once per frame
 	void Update () 
 	{
-        if (Input.GetKey("a"))
-        {
-            myRigidbody.AddForce(transform.forward);
-        }
-
-
+     
         if (this.gameObject.layer == 8)
 		{
 			foreach(Transform t in transform)
@@ -63,11 +58,9 @@ public class PlayerMovement : MonoBehaviour{
 	 }
      lastPos = curPos;
 
-
-
-	
-	moveInput = new Vector3(CrossPlatformInputManager.GetAxis("Horizontal"),0.0f,CrossPlatformInputManager.GetAxis("Vertical"));
-	moveVelocity = moveInput * moveSpeed;
+        moveInput = new Vector3(CrossPlatformInputManager.GetAxis("Horizontal"),0.0f,CrossPlatformInputManager.GetAxis("Vertical"));
+        if(!walking)
+        moveVelocity = moveInput * moveSpeed;
 	float lockPos = 0f;
 	
 	}
