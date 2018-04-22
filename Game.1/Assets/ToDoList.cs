@@ -7,9 +7,10 @@ public class ToDoList : MonoBehaviour {
 	/*
 	
 	Lucas ToDoList:
-	Start into game
+	Start into game check!
 	Enemy Damage
 	PlayerDeath
+    End the level
 	
 	
 	
