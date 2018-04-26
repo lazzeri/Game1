@@ -11,6 +11,7 @@ public class RusherDamage : MonoBehaviour {
     public GameObject collision = null;
     private Animator anim;
     Vector3 force;
+    Vector3 fixedfoce;
     // Use this for initialization
     void Start () {
         Player = GameObject.Find("Robo-Mainchar");
@@ -21,8 +22,9 @@ public class RusherDamage : MonoBehaviour {
         collision = c.gameObject; 
         // calculate force vector
          force = c.transform.position - transform.position;
+         fixedfoce = new Vector3(force.x, 0.0f, force.z);
         // normalize force vector to get direction only and trim magnitude
-        force.Normalize();
+        fixedfoce.Normalize();
          StartCoroutine(PushAway());
         
     }
@@ -33,7 +35,7 @@ public class RusherDamage : MonoBehaviour {
         if(pushing)
         {
            
-            collision.GetComponent<Rigidbody>().AddForce(force * strenght);
+            collision.GetComponent<Rigidbody>().AddForce(fixedfoce * strenght);
             print("LOL");
 
            
@@ -46,7 +48,7 @@ public class RusherDamage : MonoBehaviour {
         Player.GetComponent<PlayerMovement>().enabled = false;
         pushing = true;
         anim.Play("Damage");
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.4f);
         pushing = false;
         Player.GetComponent<PlayerMovement>().enabled = true;
     }

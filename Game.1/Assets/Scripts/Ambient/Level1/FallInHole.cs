@@ -10,7 +10,7 @@ public class FallInHole : MonoBehaviour {
 	
 	public Transform SecondSpawn;
 	public GameObject Player;
-	public float whaittime;
+	public float whaittime = 0.15f;
 
 	// Use this for initialization
 	void Start () {

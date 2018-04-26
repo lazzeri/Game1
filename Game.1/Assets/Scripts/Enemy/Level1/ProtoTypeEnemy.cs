@@ -53,6 +53,10 @@ public class ProtoTypeEnemy : MonoBehaviour
 
 		if(Physics.Raycast(transform.position,(forward), out hit))
 		{
+			if(hit.collider.gameObject.tag == "Player")
+			print("Found");
+
+
 			if(hit.collider.gameObject.tag == "Player" && !stopwalking && hit.distance <= 2.0f)
 			{
 			StartCoroutine(Rush());

@@ -37,7 +37,6 @@ GameObject:
   - component: {fileID: 135599970037896836}
   - component: {fileID: 208705459596598924}
   - component: {fileID: 114895009069970784}
-  - component: {fileID: 114118832772675188}
   m_Layer: 0
   m_Name: Hole
   m_TagString: Hole
@@ -101,22 +100,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114118832772675188
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1389331238147478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4186948c84c7e1e468b85e084a209d94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myPosition: {fileID: 0}
-  myTransform: {x: 0, y: 0, z: 0}
-  SecondSpawn: {fileID: 0}
-  Player: {fileID: 0}
-  whaittime: 0
 --- !u!114 &114895009069970784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,7 +136,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: 0.03, y: 1, z: 0.03}
+  m_Extents: {x: 0.19, y: 1, z: 0.19}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
