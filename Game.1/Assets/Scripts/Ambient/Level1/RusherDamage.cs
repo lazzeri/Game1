@@ -12,20 +12,27 @@ public class RusherDamage : MonoBehaviour {
     private Animator anim;
     Vector3 force;
     Vector3 fixedfoce;
+    bool gettinghit;
     // Use this for initialization
     void Start () {
         Player = GameObject.Find("Robo-Mainchar");
         anim = Player.GetComponent<Animator>();
+        gettinghit = false;
 	}
     void OnCollisionEnter(Collision c)
     {
-        collision = c.gameObject; 
-        // calculate force vector
-         force = c.transform.position - transform.position;
-         fixedfoce = new Vector3(force.x, 0.0f, force.z);
-        // normalize force vector to get direction only and trim magnitude
-        fixedfoce.Normalize();
-         StartCoroutine(PushAway());
+        if(c.transform.tag == "Player")
+        {
+            
+            collision = c.gameObject;
+            // calculate force vector
+            force = c.transform.position - transform.position;
+            fixedfoce = new Vector3(force.x, 0.0f, force.z);
+            // normalize force vector to get direction only and trim magnitude
+            fixedfoce.Normalize();
+            StartCoroutine(PushAway());
+        }
+     
         
     }
 
@@ -36,7 +43,7 @@ public class RusherDamage : MonoBehaviour {
         {
            
             collision.GetComponent<Rigidbody>().AddForce(fixedfoce * strenght);
-            print("LOL");
+            
 
            
         }
@@ -45,11 +52,16 @@ public class RusherDamage : MonoBehaviour {
 
     private IEnumerator PushAway()
     {
+        if(!gettinghit)
+        PlayerHealth.PlayerHealthcount--;
+        print(PlayerHealth.PlayerHealthcount);
+        gettinghit = true;
         Player.GetComponent<PlayerMovement>().enabled = false;
         pushing = true;
         anim.Play("Damage");
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.6f);
         pushing = false;
         Player.GetComponent<PlayerMovement>().enabled = true;
+        gettinghit = false;
     }
 }

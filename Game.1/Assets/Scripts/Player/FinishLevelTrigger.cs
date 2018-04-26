@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FinishLevelTrigger : MonoBehaviour 
 {
-
+    
 	// Use this for initialization
 	void Start () 
 	{
@@ -21,8 +21,9 @@ public class FinishLevelTrigger : MonoBehaviour
 	{
 		if(other.GetComponent<Collider>().tag == "Finish")
 		{
-			
-		}
+            int i = Application.loadedLevel;
+            Application.LoadLevel(i + 1);
+        }
 	
 	}
 

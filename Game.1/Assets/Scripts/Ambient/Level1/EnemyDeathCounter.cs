@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyDeathCounter : MonoBehaviour {
 
-	public static int counter = 3;
+	public static int counter = 0;
 	public Animator ACDoor;
 	public GameObject Door;
     public GameObject WallMidle;
@@ -32,7 +32,6 @@ public class EnemyDeathCounter : MonoBehaviour {
 
         WallMidle = GameObject.Find("RoomCollider and NavMesh/Back Wall Middle");
         Door = GameObject.Find("RoomCollider and NavMesh/Door");
-		counter = 3;
 		ACDoor = Door.GetComponent<Animator>();
 
 	}

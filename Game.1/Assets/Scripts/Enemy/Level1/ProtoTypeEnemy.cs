@@ -9,16 +9,19 @@ public class ProtoTypeEnemy : MonoBehaviour
 	private GameObject Target;
 	private Vector3 ToLookAt;
 	public float speed = 0f;
-
+    float rushingtime = 1.5f;
 	bool rushing,stopwalking;
 	public float duration = 1;
 	float smoothness = 0.02f;
     public Vector3 RaycastHeight;
     public bool bStuck;
+    public Animator anim;
+
 
 	public GameObject Eye,Legs1,Legs2;
 	void Start () 
 	{
+        anim = this.gameObject.GetComponent<Animator>();
 		Eye = this.gameObject.transform.Find("Sphere_001").gameObject;
 		Legs1 = this.gameObject.transform.Find("Cylinder_004").gameObject;
 		Legs2 = this.gameObject.transform.Find("Cylinder_005").gameObject;
@@ -106,13 +109,14 @@ public class ProtoTypeEnemy : MonoBehaviour
 		GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
 		yield return new WaitForSeconds(whaiting);
 		rushing = true;
-		yield return new WaitForSeconds(1);
+        anim.Play("Rush");
+		yield return new WaitForSeconds(rushingtime);
 		rushing =false;
 		stopwalking = false;
 		if(!bStuck)
 		GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-		
-		Eye.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.green);
+        
+        Eye.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.green);
 		Legs1.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.green);
 		Legs2.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.green);
 
