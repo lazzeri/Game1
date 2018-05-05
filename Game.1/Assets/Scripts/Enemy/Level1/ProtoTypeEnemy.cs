@@ -33,6 +33,11 @@ public class ProtoTypeEnemy : MonoBehaviour
 		
 		ToLookAt = new Vector3(Target.transform.position.x,this.transform.position.y,Target.transform.position.z);
 		this.transform.LookAt(ToLookAt);
+
+		Eye.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.green);
+		Legs1.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.green);
+		Legs2.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.green);
+
 	}
 	
 	// Update is called once per frame

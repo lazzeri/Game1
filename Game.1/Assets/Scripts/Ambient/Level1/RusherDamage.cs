@@ -6,7 +6,6 @@ public class RusherDamage : MonoBehaviour {
 
     GameObject Player;
     bool pushing = false;
-    public float magnitude = 10f;
     public float strenght;
     public GameObject collision = null;
     private Animator anim;

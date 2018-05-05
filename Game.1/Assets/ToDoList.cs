@@ -7,21 +7,12 @@ public class ToDoList : MonoBehaviour {
 	/*
 	
 	Lucas ToDoList:
-	Start into game check!
-    Light at door for showing path check!
-    Enemy Damage check!
+	Try using Spherecast for bigger part of hitting enemy
+	Build Spawn Animation for Enemies(Beginnin white eyes, then start) check!
+	Change Path For Enemies check! Set Enemy as Obstacle for other enemies
+	Fix Colliders for small assets//when map done
 	
-	RusherLeanMove
-	Build A MapPrefabe for All the Other Levels Finishen Om ende
-    End the level/ Start into Prefab Level for now 
-
-	PlayerDeath/PlayerHealth just start map new for now
-  
-	Fix Names of Scripts
-
-	Draw Scripting Classes from now on!
-	
-	
+	Add If enemeies collide make the rusher bump a little back and stop the rush then start the check again
 	
 	
 	

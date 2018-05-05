@@ -4,28 +4,21 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour {
 
-	public GameObject Enemy;
-	public Transform[] SpawnPoints;
+
 	public GameObject[] Enemies;
+	public ProtoTypeEnemy scProto;
+	public FallInHolEnemy scFallinHole;
+	public RusherDamage scRusherDamage;
 	
 	// Use this for initialization
 	void Start () 
 	{
-		SpawnPoints = new Transform[4];
-
-		for(int i = 0; i < 4; i++)
-		{
-			SpawnPoints[i] = this.gameObject.transform.GetChild(i);
-		}
-
 		Enemies = new GameObject[4]; 	
+		Enemies[0] = GameObject.Find("Rusher 1");
+		Enemies[1] = GameObject.Find("Rusher 2");
+		Enemies[2] = GameObject.Find("Rusher 3");
+		Enemies[3] = GameObject.Find("Rusher 4");
 		
-		for(int i = 0; i < 4; i++)
-		{
-		Enemies[i] = ((GameObject)Instantiate(Enemy));
-		Enemies[i].transform.position = SpawnPoints[i].transform.position;
-		Enemies[i].SetActive(false);
-		} 
 		
 		StartCoroutine(SpawnEnemies());
 	}
@@ -41,8 +34,15 @@ public class SpawnEnemy : MonoBehaviour {
 		 
 		for(int i = 0; i < 4; i++)
 		{
-		Enemies[i].SetActive(true);
-		yield return new WaitForSeconds(1);
+			scProto = Enemies[i].GetComponent<ProtoTypeEnemy>();
+			scFallinHole = Enemies[i].GetComponent<FallInHolEnemy>();
+			scRusherDamage = Enemies[i].GetComponent<RusherDamage>();
+
+			scProto.enabled = true;
+			scFallinHole.enabled = true;
+			scRusherDamage.enabled = true;
+		
+		yield return new WaitForSeconds(2);
 		} 
 
 		
