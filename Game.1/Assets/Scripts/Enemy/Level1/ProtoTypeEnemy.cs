@@ -44,7 +44,7 @@ public class ProtoTypeEnemy : MonoBehaviour
 	void Update () 
 	{
 		//walking
-	     if(!stopwalking)
+	     if(!stopwalking && GetComponent<UnityEngine.AI.NavMeshAgent>().enabled)
 		 {
 			GetComponent<UnityEngine.AI.NavMeshAgent>().destination = Target.transform.position;
 		 }
@@ -62,7 +62,7 @@ public class ProtoTypeEnemy : MonoBehaviour
 		if(Physics.Raycast(transform.position,(forward), out hit))
 		{
 			if(hit.collider.gameObject.tag == "Player")
-			print("Found");
+
 
 
 			if(hit.collider.gameObject.tag == "Player" && !stopwalking && hit.distance <= 2.0f)
@@ -91,6 +91,12 @@ public class ProtoTypeEnemy : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Rusher")
+            bStuck = true;
+    }
+
 
     void FixedUpdate()
 	{
@@ -117,7 +123,8 @@ public class ProtoTypeEnemy : MonoBehaviour
         anim.Play("Rush");
 		yield return new WaitForSeconds(rushingtime);
 		rushing =false;
-		stopwalking = false;
+        yield return new WaitForSeconds(1.0f);
+        stopwalking = false;
 		if(!bStuck)
 		GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
         

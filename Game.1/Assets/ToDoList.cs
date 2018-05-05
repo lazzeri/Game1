@@ -23,7 +23,9 @@ public class ToDoList : MonoBehaviour {
 	Create UI
 	
 	
-	
+	AAALsoo..
+    Erster Gegen Wond Script Mochen
+    Is Kinematic ein und ausschalten
 	
 	
 	

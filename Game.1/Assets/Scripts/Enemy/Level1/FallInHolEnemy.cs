@@ -22,8 +22,8 @@ public class FallInHolEnemy : MonoBehaviour
         if (other.gameObject.tag == "Hole")
         {
           
-            print("trying");
             scProto.enabled = false;
+            this.GetComponent<Rigidbody>().isKinematic = true;
             position1 = other.gameObject.transform.GetChild(0).transform;
             position2 = other.gameObject.transform.GetChild(0).transform.GetChild(0).transform;
             other.gameObject.SetActive(false);
@@ -41,19 +41,18 @@ public class FallInHolEnemy : MonoBehaviour
 
             if (transform.position != position1.position && bDrag1 == true)
             {
-                print("Trying");
-                transform.position = Vector3.MoveTowards(transform.position, position1.position, moveSpeed * Time.deltaTime);
+
+               transform.position = Vector3.MoveTowards(transform.position, position1.position, moveSpeed * Time.deltaTime);
                
             }
             if (transform.position == position1.position)
             {
-                print("True");
                 bDrag1 = false;
                 bDrag2 = true;
             }
             if (bDrag2 == true)
             {
-                print("xd");
+         
                 transform.position = Vector3.MoveTowards(transform.position, position2.position, moveSpeed * Time.deltaTime);
             }
             if(transform.position == position2.position)

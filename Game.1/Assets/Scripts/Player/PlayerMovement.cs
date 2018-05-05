@@ -15,9 +15,16 @@ public class PlayerMovement : MonoBehaviour{
 	private Vector3 currVel,curPos,position,lastPos;
     public GameObject WallMidle;
 
+    void OnCollisionEnter(Collision c)
+    {
+        if (c.transform.tag == "Wall")
+        {
+            print("LOL");
+        }
+    }
 
-	// Use this for initialization
-	void Start () {
+            // Use this for initialization
+            void Start () {
         WallMidle = GameObject.Find("RoomCollider and NavMesh/Front Wall Middle");
         WallMidle.SetActive(false);
         walking = false;

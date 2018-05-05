@@ -180,9 +180,10 @@ GameObject:
   - component: {fileID: 114408118450447906}
   - component: {fileID: 114440784889702440}
   - component: {fileID: 114451085066810918}
+  - component: {fileID: 114811061094254854}
   m_Layer: 0
   m_Name: Rusher
-  m_TagString: Untagged
+  m_TagString: Rusher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,8 +246,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1958440138997750}
-  m_LocalRotation: {x: -0, y: -0.68883926, z: -0, w: -0.72491413}
-  m_LocalPosition: {x: -1.1913097, y: 6.493, z: -5.731442}
+  m_LocalRotation: {x: -0, y: -0.7939076, z: -0, w: 0.6080385}
+  m_LocalPosition: {x: 1.31, y: 6.398, z: -4.28}
   m_LocalScale: {x: 0.16667324, y: 0.16115698, z: 0.16975851}
   m_Children:
   - {fileID: 4667818305880016}
@@ -711,11 +712,11 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1958440138997750}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_Mass: 1.96
+  m_Drag: 6.01
+  m_AngularDrag: 5.88
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
@@ -748,12 +749,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1daba032f429e794ba02796f9dbd7028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whaiting: 1
+  whaiting: -1.55
   movementSpeed: 1
   speed: 0
   duration: 1
-  RaycastHeight: {x: 0.32407352, y: 6.5688777, z: -3.5137086}
-  bStuck: 0
+  RaycastHeight: {x: 0.05088917, y: 6.564834, z: -5.8352456}
+  bStuck: 1
   anim: {fileID: 95941674779320914}
   Eye: {fileID: 1041067263401876}
   Legs1: {fileID: 1324371877914448}
@@ -784,9 +785,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 463f2733dfb1d634082e004310fb9bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnitude: 10
-  strenght: 25
+  strenght: 10
   collision: {fileID: 0}
+--- !u!114 &114811061094254854
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1958440138997750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5be8a605f4108840bd8a3bbc96584ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luca: {fileID: 0}
+  hunting: 0
+  probe: Rusher2
+  strenght: 10
+  collision: {fileID: 0}
+  t: 1
+  u: -1
 --- !u!136 &136050923025068134
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -808,7 +826,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1958440138997750}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 1.1
   m_Height: 3.44
   m_Direction: 1

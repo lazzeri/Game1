@@ -53,7 +53,6 @@ public class RusherDamage : MonoBehaviour {
     {
         if(!gettinghit)
         PlayerHealth.PlayerHealthcount--;
-        print(PlayerHealth.PlayerHealthcount);
         gettinghit = true;
         Player.GetComponent<PlayerMovement>().enabled = false;
         pushing = true;

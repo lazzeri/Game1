@@ -22,19 +22,19 @@ public class FallInHolePlayer : MonoBehaviour {
 
             if (transform.position != position1.position && bDrag1 == true)
             {
-                print("Trying");
+              
                 transform.position = Vector3.MoveTowards(transform.position, position1.position, moveSpeed * Time.deltaTime);
                
             }
             if (transform.position == position1.position)
             {
-                print("True");
+                
                 bDrag1 = false;
                 bDrag2 = true;
             }
             if (bDrag2 == true)
             {
-                print("xd");
+              
                 transform.position = Vector3.MoveTowards(transform.position, position2.position, moveSpeed * Time.deltaTime);
             }
             if(transform.position == position2.position)
