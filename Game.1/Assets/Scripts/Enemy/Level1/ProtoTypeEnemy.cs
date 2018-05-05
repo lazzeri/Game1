@@ -126,7 +126,7 @@ public class ProtoTypeEnemy : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         stopwalking = false;
 		if(!bStuck)
-		GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+		GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true; 
         
         Eye.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.green);
 		Legs1.GetComponent<MeshRenderer>().material.SetColor("_Color",Color.green);

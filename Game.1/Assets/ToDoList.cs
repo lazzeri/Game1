@@ -26,6 +26,13 @@ public class ToDoList : MonoBehaviour {
 	AAALsoo..
     Erster Gegen Wond Script Mochen
     Is Kinematic ein und ausschalten
+
+
+    mir wellen das lei uaner es RusherHitsObject Script startet
+
+    Es scholtet beade aus und pusht beade ausanond
+
+    dorf hell net ausscholten
 	
 	
 	
