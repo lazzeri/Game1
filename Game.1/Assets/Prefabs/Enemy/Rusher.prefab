@@ -246,8 +246,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1958440138997750}
-  m_LocalRotation: {x: 0, y: 0.9719175, z: 0, w: -0.235322}
-  m_LocalPosition: {x: 0.904377, y: 6.4148345, z: -5.07871}
+  m_LocalRotation: {x: -0, y: -0.8756912, z: -0, w: -0.48287165}
+  m_LocalPosition: {x: -1.2878708, y: 6.384, z: -4.040795}
   m_LocalScale: {x: 0.16667324, y: 0.16115698, z: 0.16975851}
   m_Children:
   - {fileID: 4667818305880016}
@@ -744,7 +744,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1958440138997750}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1daba032f429e794ba02796f9dbd7028, type: 3}
   m_Name: 
@@ -765,7 +765,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1958440138997750}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7f939d2b89505c4aa8458cad3d689a7, type: 3}
   m_Name: 
@@ -787,13 +787,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strenght: 10
   collision: {fileID: 0}
+  testing: {fileID: 0}
 --- !u!114 &114811061094254854
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1958440138997750}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5be8a605f4108840bd8a3bbc96584ae, type: 3}
   m_Name: 
@@ -839,7 +840,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1958440138997750}
   m_Enabled: 0
   m_AgentTypeID: 0
-  m_Radius: 2.01
+  m_Radius: 0.5
   m_Speed: 0.65
   m_Acceleration: 8
   avoidancePriority: 50
