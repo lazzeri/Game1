@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class RusherHitsObject : MonoBehaviour {
-    public NavMeshAgent luca;
+    
     public bool hunting;
-    public string probe;
     bool start;
     GameObject Player;
-    GameObject OtherPlayer;
+    public GameObject OtherPlayer;
     bool pushing = false;
     public float strenght = 10f;
     public GameObject collision = null;
@@ -17,28 +16,59 @@ public class RusherHitsObject : MonoBehaviour {
     Vector3 force,force2, fixedfoce2;
     Vector3 fixedfoce;
     bool gettinghit;
+	bool xd = false;
     private ProtoTypeEnemy scProto;
     private FallInHolEnemy scFallinHole;
     private RusherDamage scRusher;
     private GameObject Enemy;
-     int x = -1;
-     int y = -1;
-  public  int t = -1;
-  public  int u = -1;
+    int x = -1;
+    int y = -1;
+	public  int t = -1;
+	public  int u = -1;
     // Use this for initialization
     void Start () {
         hunting = false;
         start = false;
-       scProto = this.GetComponent<ProtoTypeEnemy>();
-       scFallinHole = this.GetComponent<FallInHolEnemy>();
+		scProto = this.GetComponent<ProtoTypeEnemy>();
+		scFallinHole = this.GetComponent<FallInHolEnemy>();
         scRusher = this.GetComponent<RusherDamage>();
     }
 	
 	// Update is called once per frame
 	
-
     void OnCollisionEnter(Collision c)
     {
+	
+		if (c.transform.tag == "Rusher" && c.gameObject.GetComponent<RusherHitsObject>().getHunting() == false)
+        {
+          
+            print("GO");
+			hunting = true;
+            c.gameObject.GetComponent<RusherHitsObject>().enabled = false;
+            c.gameObject.GetComponent<ProtoTypeEnemy>().enabled = false;
+            c.gameObject.GetComponent<FallInHolEnemy>().enabled = false;
+            c.gameObject.GetComponent<RusherDamage>().enabled = false;
+            c.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+
+            gameObject.GetComponent<ProtoTypeEnemy>().enabled = false;
+            gameObject.GetComponent<FallInHolEnemy>().enabled = false;
+            gameObject.GetComponent<RusherDamage>().enabled = false;
+            gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+            print("lol");
+            print("hit");
+
+            force = c.transform.position - transform.position;
+			fixedfoce = new Vector3(force.x *-2, 0.0f, force.z *-2);
+		    fixedfoce.Normalize();
+        
+		    force2 = transform.position - c.transform.position;
+			fixedfoce2 = new Vector3(force2.x *-2, 0.0f, force2.z *-2);
+		    fixedfoce2.Normalize();
+        
+			collision = c.gameObject;
+			StartCoroutine(PushAway());
+        }
+
         if (c.transform.tag == "WallX")
         {
             x = 1;
@@ -62,7 +92,6 @@ public class RusherHitsObject : MonoBehaviour {
             y = 1;
 
             print("hit");
-            collision = c.gameObject;
             // calculate force vector
             //   force = c.transform.position - transform.position;
             force = transform.position - c.transform.position;
@@ -72,53 +101,22 @@ public class RusherHitsObject : MonoBehaviour {
             fixedfoce.Normalize();
             StartCoroutine(PushAway());
         }
-
-        if (c.transform.tag == "Rusher" && c.gameObject.GetComponent<RusherHitsObject>().getHunting() == false)
-        {
-          
-            hunting = true;
-            Enemy = c.gameObject;
-            c.gameObject.GetComponent<RusherHitsObject>().enabled = false;
-            c.gameObject.GetComponent<ProtoTypeEnemy>().enabled = false;
-            c.gameObject.GetComponent<FallInHolEnemy>().enabled = false;
-            c.gameObject.GetComponent<RusherDamage>().enabled = false;
-            c.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-
-            gameObject.GetComponent<ProtoTypeEnemy>().enabled = false;
-            gameObject.GetComponent<FallInHolEnemy>().enabled = false;
-            gameObject.GetComponent<RusherDamage>().enabled = false;
-            gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-                print("lol");
-                print("Auschalten" + probe);
-            
-            print("hit");
-            collision = c.gameObject;
-
-            force = c.transform.position - transform.position;
-         //   force2 = transform.position - c.transform.position;
-            fixedfoce = new Vector3(force2.x, force2.y);
-        //   fixedfoce2 = new Vector3(force.x, force.y);
-            // normalize force vector to get direction only and trim magnitude
-            fixedfoce.Normalize();
-            StartCoroutine(PushAway());
-            
-
-        }
-
-        
-       
+	}
 
 
-    }
     public bool getHunting()
     {
         return hunting;
     }
     void Update()
     {
-      
-
-    }
+		if(pushing)
+		{
+			GetComponent<Rigidbody>().AddForce(fixedfoce * strenght);
+			collision.GetComponent<Rigidbody>().AddForce(fixedfoce2 * strenght);
+		}
+	}
+    
 
     private IEnumerator PushAway()
     {
@@ -133,31 +131,20 @@ public class RusherHitsObject : MonoBehaviour {
         hunting = false;
         print("end");
 
-
-       gameObject.GetComponent<RusherHitsObject>().enabled = true;
-       gameObject.GetComponent<ProtoTypeEnemy>().enabled = true;
-       gameObject.GetComponent<FallInHolEnemy>().enabled = true;
-       gameObject.GetComponent<RusherDamage>().enabled = true;
+		gameObject.GetComponent<RusherHitsObject>().enabled = true;
+		gameObject.GetComponent<ProtoTypeEnemy>().enabled = true;
+		gameObject.GetComponent<FallInHolEnemy>().enabled = true;
+		gameObject.GetComponent<RusherDamage>().enabled = true;
       
-
-
-        Enemy.gameObject.GetComponent<RusherHitsObject>().enabled = true;
+		Enemy.gameObject.GetComponent<RusherHitsObject>().enabled = true;
         Enemy.gameObject.GetComponent<ProtoTypeEnemy>().enabled = true;
         Enemy.gameObject.GetComponent<FallInHolEnemy>().enabled = true;
         Enemy.gameObject.GetComponent<RusherDamage>().enabled = true;
-
+		
 
         yield return new WaitForSeconds(0.6f);
 
         gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
         Enemy.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
-
-
-
-
-    }
-
-
-
-
+	}
 }

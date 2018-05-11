@@ -13,7 +13,7 @@ public class ToDoList : MonoBehaviour {
 	Fix Colliders for small assets//when map done
 	
 	Add If enemeies collide make the rusher bump a little back and stop the rush then start the check again
-	
+	NO ZU FIXEN BEIM SCRIPT SEIN PUSHAWAY FUM WALL ÄNDERN UND NAVMESH RADIUS AUF 0 UND BACK AUF 2
 	
 	
 	

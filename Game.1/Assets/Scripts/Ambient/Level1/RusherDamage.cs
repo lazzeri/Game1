@@ -13,7 +13,6 @@ public class RusherDamage : MonoBehaviour {
     Vector3 fixedfoce;
     bool gettinghit;
 
-    public GameObject testing;
 
     // Use this for initialization
     void Start () {
@@ -41,27 +40,11 @@ public class RusherDamage : MonoBehaviour {
 
     // Upaaadate is called once per frame
     void Update () {
-        if (Input.GetKey("w"))
-        {
-            force = testing.transform.position - transform.position;
-            fixedfoce = new Vector3(force.x, 0.0f, force.z);
-            fixedfoce.Normalize();
-            GetComponent<Rigidbody>().AddForce(fixedfoce * strenght);
-
-        }
-
-
-
+       
         if (pushing)
         {
-           
+             GetComponent<Rigidbody>().AddForce(fixedfoce * strenght);
 
-                
-                GetComponent<Rigidbody>().AddForce(fixedfoce * strenght);
-            
-
-
-           
         }
             
     }
