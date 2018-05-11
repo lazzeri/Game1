@@ -74,13 +74,13 @@ public class ProtoTypeEnemy : MonoBehaviour
 		if(rushing)
 		{
 			GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
-		transform.position += transform.forward * Time.deltaTime * movementSpeed;
+		    transform.position += transform.forward * Time.deltaTime * movementSpeed;
 		}
 		
 		
 
 	}
-
+    
      void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Hole")
@@ -91,11 +91,11 @@ public class ProtoTypeEnemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+ /*   private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Rusher")
             bStuck = true;
-    }
+    }*/
 
 
     void FixedUpdate()

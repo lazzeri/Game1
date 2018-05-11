@@ -21,13 +21,19 @@ public class FallInHolEnemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Hole")
         {
-          
+            
             scProto.enabled = false;
+            GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+            GetComponent<ProtoTypeEnemy>().enabled = false;
+            GetComponent<RusherDamage>().enabled = false;
+            GetComponent<RusherHitsObject>().enabled = false;
+
+
             this.GetComponent<Rigidbody>().isKinematic = true;
             position1 = other.gameObject.transform.GetChild(0).transform;
             position2 = other.gameObject.transform.GetChild(0).transform.GetChild(0).transform;
             other.gameObject.SetActive(false);
-            GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+            
             bDrag1 = true;
 
         }
@@ -57,7 +63,7 @@ public class FallInHolEnemy : MonoBehaviour
             }
             if(transform.position == position2.position)
             {
-                Destroy(this.gameObject.GetComponent<Rigidbody>());
+             //   Destroy(this.gameObject.GetComponent<Rigidbody>());
                 Destroy(this.gameObject.GetComponent<CapsuleCollider>());
                 EnemyDeathCounter.counter = EnemyDeathCounter.counter + 1;
                 print(EnemyDeathCounter.counter);
