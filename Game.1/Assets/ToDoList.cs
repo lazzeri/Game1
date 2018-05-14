@@ -14,6 +14,6 @@ public class ToDoList : MonoBehaviour {
 
     Object Rusht... hittet anderes object und schaltet nicht mehr navmeshnavigator
 	
-	
+	Es beschte war wenn dor gegner es script einscholget ober net das er es mocht also startet er sozusogen sein egenes pushaway
 	 */
 }

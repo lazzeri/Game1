@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour{
 	{
 		moveInput = new Vector3 (Vertical,0f, Horizontal);
 		moveVelocity = moveInput * moveSpeed;
-		print(Vertical);
+
 	
 	
 	 if(Input.GetKey("d")){

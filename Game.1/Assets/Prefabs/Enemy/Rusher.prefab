@@ -754,8 +754,8 @@ MonoBehaviour:
   movementSpeed: 1
   speed: 0
   duration: 1
-  RaycastHeight: {x: 0.2668637, y: 6.5688777, z: -4.7846727}
-  bStuck: 1
+  RaycastHeight: {x: 0.38000587, y: 6.5648346, z: -3.36215}
+  bStuck: 0
   anim: {fileID: 95941674779320914}
   Eye: {fileID: 1041067263401876}
   Legs1: {fileID: 1324371877914448}
@@ -800,6 +800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa06e5a158300a4f9742088e71c8eba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dead: 0
 --- !u!114 &114811061094254854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -813,7 +814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hunting: 0
   OtherPlayer: {fileID: 0}
-  strenght: 4
+  strenght: 10
   collision: {fileID: 0}
 --- !u!136 &136252745394007208
 CapsuleCollider:

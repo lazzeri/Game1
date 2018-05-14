@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerDeath : MonoBehaviour
 {
-
+    static bool dead = false;
     public static GameObject[]  Children;
     public Transform[] positions;
     public static GameObject Char;
@@ -29,12 +29,20 @@ public class PlayerDeath : MonoBehaviour
 	
 public static void Die()
     {
-        Movement.enabled = false;
-        Char.gameObject.GetComponent<Animator>().enabled = false;
-        for (int i = 0; i < 7; i++)
+        
+        if(!dead)
         {
-            Rigidbody gameObjectsRigidBody = Children[i].AddComponent<Rigidbody>();
-            Char.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            dead = true;
+            Movement.enabled = false;
+            Destroy(Char.gameObject.GetComponent<PlayerMovement>());
+          
+            Char.gameObject.GetComponent<Animator>().enabled = false;
+            for (int i = 0; i < 7; i++)
+            {
+                Rigidbody gameObjectsRigidBody = Children[i].AddComponent<Rigidbody>();
+                Char.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            }
         }
+       
     }
 }

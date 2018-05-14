@@ -70,6 +70,10 @@ public class FallInHolEnemy : MonoBehaviour
             {
                //Destroy(this.gameObject.GetComponent<Rigidbody>());
                 Destroy(this.gameObject.GetComponent<CapsuleCollider>());
+                Destroy(this.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>());
+                Destroy(this.gameObject.GetComponent<RusherDamage>());
+                Destroy(this.gameObject.GetComponent<ProtoTypeEnemy>());
+
                 EnemyDeathCounter.counter = EnemyDeathCounter.counter + 1;
                 print(EnemyDeathCounter.counter);
 

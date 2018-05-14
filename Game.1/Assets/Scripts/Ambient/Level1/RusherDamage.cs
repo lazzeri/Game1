@@ -59,7 +59,11 @@ public class RusherDamage : MonoBehaviour {
         anim.Play("Damage");
         yield return new WaitForSeconds(0.6f);
         pushing = false;
-        Player.GetComponent<PlayerMovement>().enabled = true;
+        if(Player.GetComponent<PlayerMovement>())
+        {
+            Player.GetComponent<PlayerMovement>().enabled = true;
+        }
+      
         gettinghit = false;
     }
 }
