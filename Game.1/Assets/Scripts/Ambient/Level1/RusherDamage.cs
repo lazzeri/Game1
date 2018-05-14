@@ -5,7 +5,7 @@ using UnityEngine;
 public class RusherDamage : MonoBehaviour {
 
     GameObject Player;
-    bool pushing = false;
+   public bool pushing = false;
     public float strenght;
     public GameObject collision = null;
     private Animator anim;
@@ -39,14 +39,25 @@ public class RusherDamage : MonoBehaviour {
 
 
     // Upaaadate is called once per frame
-    void Update () {
+    void FixedUpdate () {
        
         if (pushing)
         {
-             GetComponent<Rigidbody>().AddForce(fixedfoce * strenght);
+             collision.GetComponent<Rigidbody>().AddForce(fixedfoce * strenght);
 
         }
-            
+
+        if(Input.GetKey("w"))
+        {
+            pushing = true;
+        }
+
+        if (Input.GetKey("e"))
+        {
+            pushing = false;
+        }
+
+
     }
 
     private IEnumerator PushAway()

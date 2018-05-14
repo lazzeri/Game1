@@ -8,7 +8,7 @@ public class ToDoList : MonoBehaviour {
 	Roboter Pizza Hinzufügen
 
 
-	increase knockback dmg
+	
 	Helligkeit bei EndPortal
 	Rusher Togglen das sie perfekt stark sein
 	In radius fun 2 rusher auf 2 setzen

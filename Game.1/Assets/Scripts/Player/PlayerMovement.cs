@@ -94,7 +94,7 @@ public class PlayerMovement : MonoBehaviour{
 	void FixedUpdate()
 	{
         if(walking)
-        myRigidbody.AddForce(transform.forward * 40.0f);
+        myRigidbody.AddForce(transform.forward * 50.0f);
 
 
         if (this.gameObject.layer != 8)
@@ -108,7 +108,7 @@ public class PlayerMovement : MonoBehaviour{
     private IEnumerator Starting()
     {
         walking = true;
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(2f);
         walking = false;
         WallMidle.SetActive(true);
     }

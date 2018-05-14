@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour {
     public static int PlayerHealthcount;
 	void Start () {
        
-        PlayerHealthcount = 4;
+        PlayerHealthcount = 100;
 	}
 	
 	// Update is called once per frame
