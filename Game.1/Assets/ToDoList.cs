@@ -5,15 +5,14 @@ using UnityEngine;
 public class ToDoList : MonoBehaviour {
 
 	/*
-	
-	Lucas ToDoList:
-	Fix speed of going into hole
+	Roboter Pizza Hinzufügen
 
-	
-	Was passiert?
 
-    Object Rusht... hittet anderes object und schaltet nicht mehr navmeshnavigator
+	increase knockback dmg
+	Helligkeit bei EndPortal
+	Rusher Togglen das sie perfekt stark sein
+	In radius fun 2 rusher auf 2 setzen
 	
-	Es beschte war wenn dor gegner es script einscholget ober net das er es mocht also startet er sozusogen sein egenes pushaway
+
 	 */
 }

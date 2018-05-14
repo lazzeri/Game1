@@ -172,15 +172,15 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4473000075301056}
-  - component: {fileID: 95941674779320914}
   - component: {fileID: 195461988346117862}
-  - component: {fileID: 54745286707278906}
-  - component: {fileID: 136252745394007208}
   - component: {fileID: 114408118450447906}
   - component: {fileID: 114440784889702440}
   - component: {fileID: 114451085066810918}
   - component: {fileID: 114811061094254854}
   - component: {fileID: 114507626184648846}
+  - component: {fileID: 95941674779320914}
+  - component: {fileID: 54745286707278906}
+  - component: {fileID: 136252745394007208}
   - component: {fileID: 136706494265143036}
   m_Layer: 0
   m_Name: Rusher
@@ -247,8 +247,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1958440138997750}
-  m_LocalRotation: {x: -0, y: -0.7939076, z: -0, w: 0.6080385}
-  m_LocalPosition: {x: 0.33, y: 6.398, z: -2.581}
+  m_LocalRotation: {x: -0, y: -0.68883926, z: -0, w: -0.72491413}
+  m_LocalPosition: {x: -1.1913097, y: 6.493, z: -2.63}
   m_LocalScale: {x: 0.16667324, y: 0.16115698, z: 0.16975851}
   m_Children:
   - {fileID: 4667818305880016}
@@ -378,7 +378,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: f2507d7a250c73d4396223513a5b7d56, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -588,7 +588,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: f2507d7a250c73d4396223513a5b7d56, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -623,7 +623,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: f2507d7a250c73d4396223513a5b7d56, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -754,8 +754,8 @@ MonoBehaviour:
   movementSpeed: 1
   speed: 0
   duration: 1
-  RaycastHeight: {x: 0.38000587, y: 6.5648346, z: -3.36215}
-  bStuck: 0
+  RaycastHeight: {x: 0.2668637, y: 6.5688777, z: -4.7846727}
+  bStuck: 1
   anim: {fileID: 95941674779320914}
   Eye: {fileID: 1041067263401876}
   Legs1: {fileID: 1324371877914448}
@@ -814,7 +814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hunting: 0
   OtherPlayer: {fileID: 0}
-  strenght: 10
+  strenght: 3
   collision: {fileID: 0}
 --- !u!136 &136252745394007208
 CapsuleCollider:
