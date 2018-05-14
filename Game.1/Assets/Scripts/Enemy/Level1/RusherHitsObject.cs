@@ -7,6 +7,7 @@ public class RusherHitsObject : MonoBehaviour {
 
     public bool hunting;
     bool start;
+    bool pushing2 = false;
     GameObject Player;
     public GameObject OtherPlayer;
     bool pushing = false;
@@ -39,7 +40,7 @@ public class RusherHitsObject : MonoBehaviour {
     void OnCollisionEnter(Collision c)
     {
 
-        if (c.transform.tag == "Rusher" && c.gameObject.GetComponent<RusherHitsObject>().getHunting() == false)
+        if (c.transform.tag == "Rusher" && c.gameObject.GetComponent<RusherHitsObject>().getHunting() == false && pushing2 == false)
         {
 
 
@@ -47,13 +48,11 @@ public class RusherHitsObject : MonoBehaviour {
 
             c.gameObject.GetComponent<RusherHitsObject>().enabled = false;
             c.gameObject.GetComponent<ProtoTypeEnemy>().enabled = false;
-            c.gameObject.GetComponent<FallInHolEnemy>().enabled = false;
             c.gameObject.GetComponent<RusherDamage>().enabled = false;
             c.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
             c.gameObject.GetComponent<Rigidbody>().useGravity = false;
 
             gameObject.GetComponent<ProtoTypeEnemy>().enabled = false;
-            gameObject.GetComponent<FallInHolEnemy>().enabled = false;
             gameObject.GetComponent<RusherDamage>().enabled = false;
             gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
             gameObject.GetComponent<Rigidbody>().useGravity = false;
@@ -133,7 +132,7 @@ public class RusherHitsObject : MonoBehaviour {
     {
         print("starting");
         pushing = true;
-
+        pushing2 = true;
         yield return new WaitForSeconds(0.6f);
         pushing = false;
         gettinghit = false;
@@ -142,20 +141,26 @@ public class RusherHitsObject : MonoBehaviour {
 
         gameObject.GetComponent<RusherHitsObject>().enabled = true;
         gameObject.GetComponent<ProtoTypeEnemy>().enabled = true;
-        gameObject.GetComponent<FallInHolEnemy>().enabled = true;
         gameObject.GetComponent<RusherDamage>().enabled = true;
         gameObject.GetComponent<Rigidbody>().useGravity = true;
         yield return new WaitForSeconds(0.3f);
+        if(collision.gameObject.GetComponent<RusherInHoleOverview>().getdead() == false)
+        {
         collision.gameObject.GetComponent<RusherHitsObject>().enabled = true;
         collision.gameObject.GetComponent<ProtoTypeEnemy>().enabled = true;
-        collision.gameObject.GetComponent<FallInHolEnemy>().enabled = true;
+        
         collision.gameObject.GetComponent<RusherDamage>().enabled = true;
         collision.GetComponent<Rigidbody>().useGravity = true;
-
+            
+        }
+      
         yield return new WaitForSeconds(0.4f);
-
+        pushing2 = false;
         gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+        if(collision.gameObject.GetComponent<RusherInHoleOverview>().getdead() == false)
+        {
         collision.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+        }
     }
 }
  /*   private IEnumerator PushAwayXY()

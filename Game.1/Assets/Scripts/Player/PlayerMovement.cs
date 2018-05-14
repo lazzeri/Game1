@@ -39,6 +39,25 @@ public class PlayerMovement : MonoBehaviour{
 	// Update is called once per frame
 	void Update () 
 	{
+		moveInput = new Vector3 (Vertical,0f, Horizontal);
+		moveVelocity = moveInput * moveSpeed;
+		print(Vertical);
+	
+	
+	 if(Input.GetKey("d")){
+		Vertical = 1;
+	} else{
+		Vertical = 0;
+	}
+
+	if(Input.GetKey("s")){
+		Horizontal = -1;
+	}else if(Input.GetKey("w")){
+		Horizontal = 1;
+	} else{
+		Horizontal = 0;
+	}
+
      
         if (this.gameObject.layer == 8)
 		{

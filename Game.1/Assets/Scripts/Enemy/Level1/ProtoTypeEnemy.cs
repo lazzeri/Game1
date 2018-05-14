@@ -61,7 +61,7 @@ public class ProtoTypeEnemy : MonoBehaviour
 
 		if(Physics.Raycast(transform.position,(forward), out hit))
 		{
-			if(hit.collider.gameObject.tag == "Player")
+			
 
 
 

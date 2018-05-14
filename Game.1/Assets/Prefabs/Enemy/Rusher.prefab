@@ -175,12 +175,13 @@ GameObject:
   - component: {fileID: 95941674779320914}
   - component: {fileID: 195461988346117862}
   - component: {fileID: 54745286707278906}
-  - component: {fileID: 136050923025068134}
   - component: {fileID: 136252745394007208}
   - component: {fileID: 114408118450447906}
   - component: {fileID: 114440784889702440}
   - component: {fileID: 114451085066810918}
   - component: {fileID: 114811061094254854}
+  - component: {fileID: 114507626184648846}
+  - component: {fileID: 136706494265143036}
   m_Layer: 0
   m_Name: Rusher
   m_TagString: Rusher
@@ -246,8 +247,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1958440138997750}
-  m_LocalRotation: {x: -0, y: -0.8756912, z: -0, w: -0.48287165}
-  m_LocalPosition: {x: -0.186, y: 6.384, z: -2.56}
+  m_LocalRotation: {x: -0, y: -0.7939076, z: -0, w: 0.6080385}
+  m_LocalPosition: {x: 0.33, y: 6.398, z: -2.581}
   m_LocalScale: {x: 0.16667324, y: 0.16115698, z: 0.16975851}
   m_Children:
   - {fileID: 4667818305880016}
@@ -751,14 +752,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whaiting: 1
   movementSpeed: 1
-  speed: 1
+  speed: 0
   duration: 1
-  RaycastHeight: {x: 0, y: 0, z: 0}
-  bStuck: 0
-  anim: {fileID: 0}
-  Eye: {fileID: 0}
-  Legs1: {fileID: 0}
-  Legs2: {fileID: 0}
+  RaycastHeight: {x: 0.2668637, y: 6.5688777, z: -4.7846727}
+  bStuck: 1
+  anim: {fileID: 95941674779320914}
+  Eye: {fileID: 1041067263401876}
+  Legs1: {fileID: 1324371877914448}
+  Legs2: {fileID: 1509665964516680}
 --- !u!114 &114440784889702440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -772,8 +773,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position1: {fileID: 0}
   position2: {fileID: 0}
-  scProto: {fileID: 0}
-  moveSpeed: 10
+  scProto: {fileID: 114408118450447906}
+  moveSpeed: 2
+  inhole: 0
 --- !u!114 &114451085066810918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -787,6 +789,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strenght: 10
   collision: {fileID: 0}
+--- !u!114 &114507626184648846
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1958440138997750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa06e5a158300a4f9742088e71c8eba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114811061094254854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -800,21 +813,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hunting: 0
   OtherPlayer: {fileID: 0}
-  strenght: 2
+  strenght: 4
   collision: {fileID: 0}
---- !u!136 &136050923025068134
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1958440138997750}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1.1
-  m_Height: 3.44
-  m_Direction: 1
-  m_Center: {x: 0.16, y: 1.69, z: 0}
 --- !u!136 &136252745394007208
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -823,6 +823,19 @@ CapsuleCollider:
   m_GameObject: {fileID: 1958440138997750}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.1
+  m_Height: 3.44
+  m_Direction: 1
+  m_Center: {x: 0.16, y: 1.69, z: 0}
+--- !u!136 &136706494265143036
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1958440138997750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1.1
   m_Height: 3.44

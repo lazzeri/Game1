@@ -8,6 +8,7 @@ public class FallInHolEnemy : MonoBehaviour
     public ProtoTypeEnemy scProto;
     bool bDrag1, bDrag2;
     public float moveSpeed = 10.0f;
+    public bool inhole = false;
     
     // Use this for initialization
     void Start()
@@ -17,12 +18,16 @@ public class FallInHolEnemy : MonoBehaviour
         scProto = GetComponent<ProtoTypeEnemy>();
     }
 
+    public bool getinhole()
+    {
+        return inhole;
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Hole")
         {
-            
-            scProto.enabled = false;
+            this.gameObject.GetComponent<RusherInHoleOverview>().setbool(true);
+            scProto.enabled = false;    
             GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
             GetComponent<ProtoTypeEnemy>().enabled = false;
             GetComponent<RusherDamage>().enabled = false;
@@ -47,7 +52,7 @@ public class FallInHolEnemy : MonoBehaviour
 
             if (transform.position != position1.position && bDrag1 == true)
             {
-
+                
                transform.position = Vector3.MoveTowards(transform.position, position1.position, moveSpeed * Time.deltaTime);
                
             }
@@ -63,7 +68,7 @@ public class FallInHolEnemy : MonoBehaviour
             }
             if(transform.position == position2.position)
             {
-             //   Destroy(this.gameObject.GetComponent<Rigidbody>());
+               //Destroy(this.gameObject.GetComponent<Rigidbody>());
                 Destroy(this.gameObject.GetComponent<CapsuleCollider>());
                 EnemyDeathCounter.counter = EnemyDeathCounter.counter + 1;
                 print(EnemyDeathCounter.counter);
