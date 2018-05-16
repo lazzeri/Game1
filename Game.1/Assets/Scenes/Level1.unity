@@ -4564,6 +4564,7 @@ GameObject:
   - component: {fileID: 269324689}
   - component: {fileID: 269324691}
   - component: {fileID: 269324690}
+  - component: {fileID: 269324692}
   m_Layer: 0
   m_Name: Cube_038
   m_TagString: Untagged
@@ -4629,6 +4630,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 269324688}
   m_Mesh: {fileID: 4300086, guid: fefb15b2c82638749a58677257c5952e, type: 3}
+--- !u!65 &269324692
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 269324688}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2.0000002, z: 2.0000005}
+  m_Center: {x: -0.0000019073486, y: 0, z: -0.0000009536743}
 --- !u!1 &280958495
 GameObject:
   m_ObjectHideFlags: 0
@@ -19332,24 +19345,6 @@ Prefab:
       propertyPath: m_Name
       value: Rusher 3
       objectReference: {fileID: 0}
-    - target: {fileID: 195461988346117862, guid: bbefc6ea3bd610849b19b2e12a79c4e4,
-        type: 2}
-      propertyPath: m_Radius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114811061094254854, guid: bbefc6ea3bd610849b19b2e12a79c4e4,
-        type: 2}
-      propertyPath: strenght
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1958440138997750, guid: bbefc6ea3bd610849b19b2e12a79c4e4, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4473000075301056, guid: bbefc6ea3bd610849b19b2e12a79c4e4, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -143.472
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bbefc6ea3bd610849b19b2e12a79c4e4, type: 2}
   m_IsPrefabParent: 0
@@ -26538,6 +26533,7 @@ GameObject:
   - component: {fileID: 1874497290}
   - component: {fileID: 1874497292}
   - component: {fileID: 1874497291}
+  - component: {fileID: 1874497293}
   m_Layer: 0
   m_Name: Cube_035
   m_TagString: Untagged
@@ -26603,6 +26599,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1874497289}
   m_Mesh: {fileID: 4300092, guid: fefb15b2c82638749a58677257c5952e, type: 3}
+--- !u!65 &1874497293
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1874497289}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2.0000002, z: 2.0000005}
+  m_Center: {x: 0, y: 0, z: -0.0000009536743}
 --- !u!1 &1877581235
 GameObject:
   m_ObjectHideFlags: 0

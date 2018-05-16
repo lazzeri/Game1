@@ -13,7 +13,7 @@ public class ProtoTypeEnemy : MonoBehaviour
 	bool rushing,stopwalking;
 	public float duration = 1;
 	float smoothness = 0.02f;
-    public Vector3 RaycastHeight;
+    public Vector3 RaycastHeight, RaycastHeight2, RaycastHeight3;
     public bool bStuck;
     public Animator anim;
 
@@ -54,17 +54,18 @@ public class ProtoTypeEnemy : MonoBehaviour
 
 		//Raycast
 		RaycastHeight = new Vector3(transform.position.x,transform.position.y + 0.15f, transform.position.z);
-		RaycastHit hit;
+        RaycastHeight2 = new Vector3(transform.position.x + 0.10f, transform.position.y + 0.15f, transform.position.z);
+        RaycastHeight3 = new Vector3(transform.position.x - 0.10f, transform.position.y + 0.15f, transform.position.z);
+        RaycastHit hit;
 		
 		Vector3 forward = transform.TransformDirection(Vector3.forward) * 2;
-		Debug.DrawRay(RaycastHeight,forward,Color.green);
+      
+        Debug.DrawRay(RaycastHeight,forward,Color.green);
+        Debug.DrawRay(RaycastHeight2, forward, Color.green);
+        Debug.DrawRay(RaycastHeight3, forward, Color.green);
 
-		if(Physics.Raycast(transform.position,(forward), out hit))
+        if (Physics.Raycast(transform.position,(forward), out hit))
 		{
-			
-
-
-
 			if(hit.collider.gameObject.tag == "Player" && !stopwalking && hit.distance <= 2.0f)
 			{
 			StartCoroutine(Rush());

@@ -26,13 +26,16 @@ public class FallInHolEnemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Hole")
         {
+            Destroy(this.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>());
             this.gameObject.GetComponent<RusherInHoleOverview>().setbool(true);
             scProto.enabled = false;    
-            GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
             GetComponent<ProtoTypeEnemy>().enabled = false;
             GetComponent<RusherDamage>().enabled = false;
             GetComponent<RusherHitsObject>().enabled = false;
-
+            Destroy(this.gameObject.GetComponent<CapsuleCollider>());
+            Destroy(this.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>());
+            Destroy(this.gameObject.GetComponent<RusherDamage>());
+            Destroy(this.gameObject.GetComponent<ProtoTypeEnemy>());
 
             this.GetComponent<Rigidbody>().isKinematic = true;
             position1 = other.gameObject.transform.GetChild(0).transform;
@@ -69,10 +72,7 @@ public class FallInHolEnemy : MonoBehaviour
             if(transform.position == position2.position)
             {
                //Destroy(this.gameObject.GetComponent<Rigidbody>());
-                Destroy(this.gameObject.GetComponent<CapsuleCollider>());
-                Destroy(this.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>());
-                Destroy(this.gameObject.GetComponent<RusherDamage>());
-                Destroy(this.gameObject.GetComponent<ProtoTypeEnemy>());
+               
 
                 EnemyDeathCounter.counter = EnemyDeathCounter.counter + 1;
                 print(EnemyDeathCounter.counter);
